@@ -18,6 +18,8 @@ class BankAccount extends NewMain {
     int previousTransaction;   
     int customerId =0;
     char opt;
+    String choice ="";
+    int exit;
 
     
     
@@ -45,13 +47,76 @@ class BankAccount extends NewMain {
             System.out.println("\n");
 
             
-
+  //switch case for choosing the menu options 
             switch (opt) {
 
                 case 'a':
                     System.out.println("***********************************");
                     System.out.println("Balance =" + balance);
                     System.out.println("\n");
+
+System.out.println("Do you wish to continue? \n Y.To continue \n N.To exit");
+
+   choice = sc.next();
+
+    if(choice !="y"){
+   
+     System.out.println("Please choose from the options below");
+
+      System.out.println("A. Deposit");
+        System.out.println("B. Withdraw");
+        System.out.println("C. Previous Transaction");
+        System.out.println("D. Exit");
+         
+         opt = sc.next().charAt(opt);
+
+         switch(opt) {
+   
+              case 'a':
+                   System.out.println("******************************");
+                    System.out.println("Enter the amount you want to deposit");
+                    System.out.println("********************************");
+                    int amount = sc.nextInt();
+                   deposit(amount, balance, previousTransaction);
+                    System.out.println("\n");
+
+   
+                   break;
+               case 'b'
+                 
+                System.out.println("***************************");
+                    System.out.println("Enter the  amount you want to withdraw");
+                    System.out.println("***************************");
+                    int amount2 = sc.nextInt();
+                    withdraw(amount2, balance, previousTransaction);
+                    System.out.println("\n");
+                    break;
+
+                 case 'c'
+                      System.out.println("***********************");
+                    getpreviousTransaction(previousTransaction);
+                    System.out.println("************************");
+                    System.out.println("\n");
+                    break;
+
+                case 'd'
+             System.exit(exit);
+                break;
+           default:
+               System.out.println("Sorry INVALID INPUT!, ENTER THE CORRECT INPUT ");
+
+
+
+}
+
+}else if (choice !="n"){
+        System.exit(exit);
+
+
+
+}
+
+
                     break;
 
                 case 'b':
